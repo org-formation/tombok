@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "packageManager": "npm",
+  "reporters": ["html", "json", "progress"],
+  "testRunner": "jest",
+  "coverageAnalysis": "perTest",
+  "tsconfigFile": "tsconfig.json",
+  "mutate": ["src/**/*.ts", "!src/**/*.test.ts"],
+  "disableTypeChecks": "src/**/*.ts",
+  "thresholds": {
+    "break": 70
+  }
+}

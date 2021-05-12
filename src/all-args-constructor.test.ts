@@ -17,6 +17,7 @@ test('constructor takes single object as argument', () => {
   @allArgsConstructor
   class Test {
     constructor(...args: any[]) {}
+    public someMethod() {};
     public foo = 'bar';
   }
 
@@ -25,6 +26,28 @@ test('constructor takes single object as argument', () => {
 
   const instance = new Test(input);
   expect(instance.foo).toEqual('baz');
+});
+
+test('constructor takes null as argument', () => {
+  @allArgsConstructor
+  class Test {
+    constructor(...args: any[]) {}
+    public foo = 'bar';
+  }
+
+  const instance = new Test(null);
+  expect(instance.foo).toEqual(null);
+});
+
+test('constructor takes no argument', () => {
+  @allArgsConstructor
+  class Test {
+    constructor(...args: any[]) {}
+    public foo = 'bar';
+  }
+
+  const instance = new Test();
+  expect(instance.foo).toEqual('bar');
 });
 
 test('works with private properties', () => {

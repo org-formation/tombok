@@ -3,8 +3,10 @@ module.exports = {
   testEnvironment: 'node',
   globals: {
     'ts-jest': {
-      diagnostics: false, // Necessary to avoid typeschecking error in decorators
-    }
+      ignoreCoverageForAllDecorators: true,
+    },
   },
   testRegex: '\\.test.ts$',
+  coverageDirectory: 'reports/coverage',
+  coverageReporters: ['json', 'lcov', 'text']
 };

@@ -43,9 +43,9 @@ test('property setters available from the builder', () => {
 test('property setters take a properly typed argument', () => {
   // @builder
   const Test = builder(class {
-    private a: number;
-    private b: string;
-    private c: boolean;
+    private a?: number;
+    private b?: string;
+    private c?: boolean;
   });
 
   const testBuilder = (Test as any).builder() as unknown as Testing;
